@@ -80,7 +80,7 @@ function getCurrentScore() {
 }
 
 function checkRounds(playerSelection, computerSelection) {
-  if (rounds !== 5) {
+  if (rounds <= 5) {
     const player = playerSelection;
     const computer = computerSelection;
 
