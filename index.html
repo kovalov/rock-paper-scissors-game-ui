@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Rock paper scissors game</title>
+  </head>
+  <body class="page__body">
+    <main class="main">
+      <div class="round-modal disabled">
+        <span class="round-modal__text"> hello </span>
+      </div>
+      <div class="final-modal disabled">
+        <span class="final-modal__text"></span>
+        <button class="button final-modal__button">Play again</button>
+      </div>
+      <div class="buttons">
+        <button data-game-element="rock" class="button button__rock">✊</button>
+        <button data-game-element="paper" class="button button__paper">
+          ✋
+        </button>
+        <button data-game-element="scissors" class="button button__scissors">
+          ✌️
+        </button>
+      </div>
+      <div class="score">
+        <div class="player">
+          <span class="player__title">You:</span>
+          <span class="score__player">0</span>
+        </div>
+        <div class="computer">
+          <span class="computer__title">Computer:</span>
+          <span class="score__computer">0</span>
+        </div>
+      </div>
+      <div class="game"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
