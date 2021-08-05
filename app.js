@@ -9,7 +9,7 @@ const gameScore = {
   computer: 0,
 };
 
-let rounds = 0;
+let rounds = 1;
 
 function playerSelection() {
   document.querySelectorAll(".buttons").forEach((button) => {
@@ -31,7 +31,7 @@ function capitalize(string) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  rounds++;
+  ++rounds;
   if (playerSelection.name === computerSelection.name) return "Draw!";
   if (playerSelection.name === "paper" && computerSelection.name === "rock") {
     gameScore.player++;
@@ -80,7 +80,7 @@ function getCurrentScore() {
 }
 
 function checkRounds(playerSelection, computerSelection) {
-  if (rounds < 5) {
+  if (rounds !== 5) {
     const player = playerSelection;
     const computer = computerSelection;
 
@@ -90,6 +90,7 @@ function checkRounds(playerSelection, computerSelection) {
     showRoundResult(result);
   } else {
     showFinalResult();
+    reset();
   }
 }
 
@@ -125,7 +126,7 @@ function reset() {
 
   button.addEventListener("click", () => {
     modal.classList.add("disabled");
-    rounds = 0;
+    rounds = 1;
     gameScore.player = 0;
     gameScore.computer = 0;
     game.innerHTML = "";
@@ -135,4 +136,3 @@ function reset() {
 }
 
 playerSelection();
-reset();
